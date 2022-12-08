@@ -1,6 +1,6 @@
 if('serviceWorker' in navigator)
 {
-    navigator.serviceWorker.register('../sw.js').then((message)=> {
+    navigator.serviceWorker.register('sw.js').then((message)=> {
         console.log('Anda ok');
     });
 }else

@@ -1,138 +1,25 @@
-// const app = new Vue({
-//     el: '#app',
-
-//     data:
-//     {
-//         search: '',
-//         allPeliculas: peliculas,
-//         peliculaSeleccionada: [],
-//         peliculasFav: []
-//     },
+window.addEventListener('offline', event =>{
+    console.log('usuario esta desconectado', event);
+});
 
 
-//     created() {
-//         this.leer();
-//     },
+window.addEventListener('online', event =>{
+    console.log('usuario esta conectado!! ALEGRIA!', event);
+});
 
-//     computed:
-//     {
-       
-//     },
+if( !navigator.onLine ){
+    console.log('estoy sin conexion pero en el momento de carga!!');
+}
 
-//     methods:
-//     {
-//         leer() {
-            
-//         let datosGuardados = localStorage.getItem('peliFav');
 
-//         if(datosGuardados)
-//         {
-//             this.peliculasFav = JSON.parse(datosGuardados);
 
-//             for(let i in this.allPeliculas)
-//             {
-//                 if(this.allPeliculas[i].nombre == datosGuardados.nombre)
-//                 {
-//                     this.allPeliculas[i].fav = true;
-//                 }
-//             }
-//         }
-
-//         },
-
-//         mostrarPelicula(item) {
-
-//             fetch(`http://www.omdbapi.com/?t=${item.nombre}&apikey=${APIKEY}`)
-//                 .then(resp => {
-//                     return resp.json();
-//                 })
-//                 .then(json => {
-//                     console.log(json)
-//                     document.getElementById('tituloModal').innerText = json.Title;
-//                     document.getElementById('descripcionMovie').innerText = json.Plot;
-//                     document.getElementById('img-modal').src = json.Poster;
-//                     document.getElementById('writer').innerText = json.Writer;
-//                     document.getElementById('year').innerText = json.Year;
-//                     document.getElementById('actors').innerText = json.Actors;
-//                     document.getElementById('director').innerText = json.Director;
-
-//                 })
-//                 .catch(err => { console.log(`Error: ${err}`) })
-//                 .finally(ok => {
-//                     console.log(`Succes`);
-//                 })
-//         },
-
-//         limpiarModal() {
-//             document.getElementById('tituloModal').innerText = "";
-//             document.getElementById('descripcionMovie').innerText = "";
-//             document.getElementById('img-modal').src = "";
-//             document.getElementById('writer').innerText = "";
-//             document.getElementById('year').innerText = "";
-//             document.getElementById('actors').innerText = "";
-//             document.getElementById('director').innerText = "";
-//         },
-
-//         favoritos(item) {
-//             item.fav = !item.fav;
-
-//             let noExistePelicula = true;
-
-//             if (this.peliculasFav.length > 0) {
-//                 for (const i in this.peliculasFav) 
-//                 {
-                    
-//                     if (this.peliculasFav[i].nombre == item.nombre) 
-//                     {
-//                         this.peliculasFav.splice(i, 1);
-//                         noExistePelicula = false;
-//                     }
-//                 }
-
-//                 if(noExistePelicula)
-//                     {
-//                         this.peliculasFav.push(item);
-//                     }
-//             }
-//             else {
-//                 this.peliculasFav.push(item);
-//             }
-
-//             localStorage.setItem('peliFav', JSON.stringify(this.peliculasFav));
-
-//         },
-
-//         fetchPelicula()
-//         {
-//             fetch(`http://www.omdbapi.com/?s=superman&page=5&apikey=${APIKEY}`)
-//         .then(resp=>{
-//             return resp.json();
-//         })
-//         .then(json=>{
-//             // this.allPeliculas = [];
-
-//             for(let i = 0; i < json.Search.length; i++)
-//             {   
-                
-//                 let pelis = new Object();
-//                 pelis.nombre = json.Search[i].Title;
-//                 pelis.poster = json.Search[i].Poster;
-//                 pelis.year = json.Search[i].Year;
-//                 pelis.fav = false;
-//                 peliculas.push(pelis);
-                               
-//             }          
-            
-//             this.allPeliculas = peliculas;
-//         })
-//         .catch(err=> {console.log(`Error: ${err}`)})
-//         .finally(ok=>{
-//             console.log(`Succes ${ok}`);
-//         })
-//         }
-//     }
-
-// })
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js').then((message)=> {
+        console.log('Service Worker esta listo!!!');
+    });
+} else {
+    console.log('Service Worker no esta soportado en este browser');
+}
 
 
 function verPelicula(name){

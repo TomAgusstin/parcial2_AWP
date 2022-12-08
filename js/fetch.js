@@ -52,34 +52,3 @@ buscar.addEventListener('click', function fetchMovies() {
         })
     }
  })
-
-
-
-
-// Escucho a ver si el usuario se desconecta
-window.addEventListener('offline', event =>{
-    console.log('usuario esta desconectado', event);
-    // estado.innerHTML = 'usuario esta desconectado!';
-});
-
-// Escucho a ver si el usuario se conecta nuevamente
-window.addEventListener('online', event =>{
-    console.log('usuario esta conectado!! ALEGRIA!', event);
-    // estado.innerHTML = 'usuario esta conectado!';
-});
-
-// Chequeo si tiene conexion al momento de carga
-if( !navigator.onLine ){
-    console.log('estoy sin conexion pero en el momento de carga!!');
-}
-
-
-
-// Chequeo si el Browser soporta Service worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../sw.js').then((message)=> {
-        console.log('Service Worker esta listo!!!');
-    });
-} else {
-    console.log('Service Worker no esta soportado en este browser');
-}
