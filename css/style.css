@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+li a{
+    color: white;
+}
+
+
+#burger-btn{
+    color: white;
+}
+
+main{
+    background-color: black;
+    min-height: 100vh;
+}
+
+
+#carrousel-maxHeight{
+    max-height: 65vh;
+}
+
+.card{
+    background-color: transparent;
+    border: 2px solid #fec8d8!important;
+    padding: 0px;
+}
+
+.card-pelis{
+    width: 90%;
+    margin-top: 10%!important;
+}
+
+#busqueda{
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.navbar-toggler{
+    border-radius: 20px;
+}
+
+.text-pink{
+    color: #fec8d8;
+}
+
+
+#img-poster{
+    max-height: 60vh;
+}
+
+
+.btn-close{
+    background-color: #fec8d8;
+}
+
+.fav{
+    color: #fec8d8!important;
+}
+
+#peliFav{
+    /* border: 2px solid #fec8d8; */
+    border-bottom: 2px solid #fec8d8;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Peliculas - Ramirez Cordero Tomas - DWN3AV - APW</title>
+    <meta name="description" content="Buscador de peliculas de Tom , para el segundo parcial de AWP. 2022.">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d1137a7794.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="imgs/vicente.png" type="image/x-icon">
+    <link rel="manifest" href="manifest/manifest.webmanifest">
+</head>
+<body>
+
+  <div>
+    
+    
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-3 fixed-top">
+        <ul class="">
+          <li class="d-flex"><a class=" text-pink m-auto" href="">Home</a></li>
+          <li class="d-flex"><a class=" text-pink m-auto" data-bs-toggle="modal" data-bs-target="#modalFavoritos" onclick="llenarModal()">Favoritos</a></li>
+          <li class="d-flex"><a class=" text-pink m-auto" href="">Proximamente</a></li>
+        </ul>
+
+        <div class="d-flex justify-content-center">
+          <input type="search" class="form-control" placeholder="Nombre de la pelicula..." id="palabraBuscar">
+          <button id="buscar" class="btn btn-primary m-auto">Buscar</button>
+        </div>  
+
+
+      </div>
+    </div>
+    <nav class="navbar fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fa-solid fa-bars-staggered text-light"></i></span>
+        </button>
+          <i class="fa-solid fa-magnifying-glass text-light bg-primary" id="busqueda" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+      </div>
+    </nav>
+    <main class="py-5">
+          <h1 class="text-center text-light py-5">
+            Bienvenido a Bullterjer Movies
+          </h1>
+          <div class="container-fluid">
+            
+            <section >
+              <div class="row m-auto" id="contenedor-pelis">
+                
+              </div>
+            </section>
+
+            <!-- Modal movie -->
+              <div class="modal fade" id="modalPeliculas" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-header">  
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                      <div class="row">
+
+                        <div class="col-xs-12 d-flex justify-content-center">
+                          <img class="img-fluid" id="imgModal">
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-12 my-2">
+                          <h3 class="modal-title text-center text-pink" id="tituloModal"></h3>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                          <strong class="text-pink">Sintesis: </strong><p id="descripcionModal" class="text-light"></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                          
+                            <strong class="text-pink">Escritor:</strong> <p><span id="writerModal" class="text-light"></span>
+                          </p>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                          <p>
+                            <strong class="text-pink">Año:</strong> <span id="yearModal" class="text-light"></span>
+                          </p>
+                        </div>
+                        
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                          
+                            <strong class="text-pink">Reparto:</strong> <p><span id="actorsModal" class="text-light"></span>
+                          </p>
+                        </div>
+
+                        
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                          
+                            <strong class="text-pink">Director:</strong> <p><span id="directorModal" class="text-light"></span>
+                          </p>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limpiarModal()">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Modal Favoritos -->
+              <div class="modal fade" id="modalFavoritos" tabindex="-1" aria-labelledby="tituloModalFavoritos" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-header">  
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                      <strong id="noFavs" class="text-light"></strong>
+
+                      <div class="position-relative" id="peliFav">
+                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>            
+    </main>
+
+
+    <footer class="bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 col-lg-3 text-center text-light py-1">Ramirez Cordero Tomas</div>
+          <div class="col-xs-12 col-md-6 col-lg-3 text-center text-light py-1">Aplicaciones Web Progresivas</div>
+          <div class="col-xs-12 col-md-6 col-lg-3 text-center text-light py-1">Segundo Parcial</div>
+          <div class="col-xs-12 col-md-6 col-lg-3 text-center text-light py-1">2022</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  
+
+
+      <script src="js/bootstrap.bundle.js"></script>
+      <script src="js/fetch.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/registerSW.js"></script>
+</body>
+</html>
