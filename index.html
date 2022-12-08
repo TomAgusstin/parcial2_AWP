@@ -24,13 +24,6 @@
           <li class="d-flex"><a class=" text-pink m-auto" data-bs-toggle="modal" data-bs-target="#modalFavoritos" onclick="llenarModal()">Favoritos</a></li>
           <li class="d-flex"><a class=" text-pink m-auto" href="">Proximamente</a></li>
         </ul>
-
-        <div class="d-flex justify-content-center">
-          <input type="search" class="form-control" placeholder="Nombre de la pelicula..." id="palabraBuscar">
-          <button id="buscar" class="btn btn-primary m-auto">Buscar</button>
-        </div>  
-
-
       </div>
     </div>
     <nav class="navbar fixed-top">
@@ -38,7 +31,6 @@
         <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="fa-solid fa-bars-staggered text-light"></i></span>
         </button>
-          <i class="fa-solid fa-magnifying-glass text-light bg-primary" id="busqueda" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"></i>
       </div>
     </nav>
     <main class="py-5">
@@ -46,7 +38,12 @@
             Bienvenido a Bullterjer Movies
           </h1>
           <div class="container-fluid">
-            
+
+            <div class="d-flex justify-content-center">
+              <input type="search" class="form-control" placeholder="Nombre de la pelicula..." id="palabraBuscar">
+              <button id="buscar" class="btn btn-primary m-auto">Buscar</button>
+            </div>  
+
             <section >
               <div class="row m-auto" id="contenedor-pelis">
                 
