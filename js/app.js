@@ -24,7 +24,7 @@ if ('serviceWorker' in navigator) {
 
 function verPelicula(name){ // Llamado para armar el modal de las peliculas.
         {   
-            fetch(`http://www.omdbapi.com/?t=${name}&apikey=${APIKEY}`)
+            fetch(`https://www.omdbapi.com/?t=${name}&apikey=${APIKEY}`)
             .then(resp=>{
                 return resp.json();
             })

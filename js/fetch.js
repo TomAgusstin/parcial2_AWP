@@ -8,7 +8,7 @@ let buscar = document.getElementById('buscar'); // El boton de busqueda
 
 buscar.addEventListener('click', function fetchMovies() {  // Arranco el fetch de busqueda
     {   
-        fetch(`http://www.omdbapi.com/?s=${palabra.value}&page=5&apikey=${APIKEY}`)
+        fetch(`https://www.omdbapi.com/?s=${palabra.value}&page=5&apikey=${APIKEY}`)
         .then(resp=>{
             return resp.json();
         })
