@@ -26,8 +26,9 @@ li a{
     color: white;
 }
 
+
 main{
-    background-color: black;
+    background-image: linear-gradient(180deg, #71454a 0, #6e3e48 10%, #6a3747 20%, #662f46 30%, #602745 40%, #591f44 50%, #511744 60%, #481045 70%, #3e0b46 80%, #330948 90%, #25094a 100%);
     min-height: 100vh;
 }
 
@@ -77,4 +78,15 @@ main{
 #peliFav{
     /* border: 2px solid #fec8d8; */
     border-bottom: 2px solid #fec8d8;
+}
+
+#idVicente{
+    background-image: url('../imgs/vicente-app.png');
+    background-size: contain;
+    background-color: white;
+}
+
+.imgBlur{
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
 }

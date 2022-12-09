@@ -11,7 +11,8 @@
     <script src="https://kit.fontawesome.com/d1137a7794.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="imgs/vicente.png" type="image/x-icon">
     <link rel="manifest" href="manifest/manifest.webmanifest">
-</head>
+    <script src="https://kit.fontawesome.com/d1137a7794.js" crossorigin="anonymous"></script>
+  </head>
 <body>
 
   <div>
@@ -20,9 +21,9 @@
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-dark p-3 fixed-top">
         <ul class="">
-          <li class="d-flex"><a class=" text-pink m-auto" href="">Home</a></li>
+          <li class="d-flex"><a class=" text-pink m-auto" href="" onclick="limpiarHome()">Home</a></li>
           <li class="d-flex"><a class=" text-pink m-auto" data-bs-toggle="modal" data-bs-target="#modalFavoritos" onclick="llenarModal()">Favoritos</a></li>
-          <li class="d-flex"><a class=" text-pink m-auto" href="">Proximamente</a></li>
+          <li class="d-flex"><a class=" text-pink m-auto" data-bs-toggle="modal" data-bs-target="#modalProximamente">Proximamente</a></li>
         </ul>
       </div>
     </div>
@@ -101,8 +102,7 @@
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limpiarModal()">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limpiarModal()"><i class="fa-solid fa-check"></i></button>
                     </div>
                   </div>
                 </div>
@@ -123,12 +123,68 @@
 
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-check"></i></button>
                     </div>
                   </div>
                 </div>
               </div>
+
+               <!-- Modal Proximamente -->
+               <div class="modal fade" id="modalProximamente" tabindex="-1" aria-labelledby="tituloModalProximamente" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-header "  id="idVicente">  
+                      <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="imgs/gato-con-botas.jpg" class="d-block w-100 imgBlur" alt="Gato con botas">
+                            <div class="carousel-caption d-none d-md-block justify-content-center">
+                              <h2\ class="text-light fw-bolder">Gato con Botas: El último deseo</h2>
+                              <p class="text-light fw-bolder">El Gato con Botas descubre que su pasión por la aventura le ha pasado factura: ha consumido ocho de sus nueve vidas. El Gato emprende un viaje épico para encontrar el mítico Último Deseo y restaurar sus nueve vidas.</p>
+                            </div>
+                            
+                          </div>
+                          <div class="carousel-item" data-bs-interval="2000">
+                            <img src="imgs/ant-man.jpg" class="d-block w-100 imgBlur" alt="Ant Man 3">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h2 class="text-light fw-bolder">
+                                Ant-Man 3</h2>
+                              <p class="text-light fw-bolder">Ant-Man y la Avispa están de vuelta del Reino Cuántico. Después de dos películas y varias apariciones en otros títulos de la franquicia, Scott Lang se ha convertido en uno de los superhéroes más carismáticos del Universo Cinematográfico Marvel (UCM). Un superhéroe con un mundo propio y autónomo respecto del resto de películas de Marvel, al mismo tiempo que muy cercano a la columna vertebral del UCM. Además, su conexión con el Reino Cuántico ahora que la Fase 4 de Marvel se ha abierto a otros universos paralelos puede hacer de Ant-Man una figura clave en las películas que están por venir.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="imgs/creed.jpg" class="d-block w-100 imgBlur" alt="Creed 3">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h2 class="text-light fw-bolder">Creed 3</h2>
+                              <p class="text-light fw-bolder">Adonis Creed está prosperando en su carrera y en su vida familiar. Cuando un amigo de la infancia y antiguo prodigio del boxeo reaparece tras cumplir condena en la cárcel, está ansioso por demostrar que merece su oportunidad en el ring.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-check"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
 
           </div>            
     </main>

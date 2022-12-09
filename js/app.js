@@ -22,7 +22,7 @@ if ('serviceWorker' in navigator) {
 }
 
 
-function verPelicula(name){
+function verPelicula(name){ // Llamado para armar el modal de las peliculas.
         {   
             fetch(`http://www.omdbapi.com/?t=${name}&apikey=${APIKEY}`)
             .then(resp=>{
@@ -47,7 +47,7 @@ function verPelicula(name){
 }
 
 
-function limpiarModal(){
+function limpiarModal(){ // Limpiamos la modal del detalle de las peliculas
                 document.getElementById('tituloModal').innerText = "";
                 document.getElementById('descripcionModal').innerText = "";
                 document.getElementById('imgModal').src = "";
@@ -58,7 +58,7 @@ function limpiarModal(){
             }
 
 
-function movieFav(name){
+function movieFav(name){ // Agregamos a peliculas favoritas.
     let existe = false;
     if(arrayFav.length > 0)
     {
@@ -81,8 +81,8 @@ function movieFav(name){
     }
 }
 
-function llenarModal(){
-
+function llenarModal(){ // Llenamos la modal de favoritos
+ 
     let cont = document.getElementById('peliFav');
     let html;
 
@@ -118,4 +118,8 @@ function borrarFav(name){
                 llenarModal();
             }
         }
+}
+
+function limpiarHome(){
+    document.getElementById('contenedor-pelis').innerHTML = "";
 }
